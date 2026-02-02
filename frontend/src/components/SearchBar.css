@@ -1,0 +1,150 @@
+.search-bar {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.search-bar-skeleton {
+  height: 180px;
+  background: var(--color-background-alt);
+  border-radius: var(--radius-lg);
+}
+
+.search-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.search-tab {
+  flex: 1;
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.search-tab:hover {
+  color: var(--color-primary);
+}
+
+.search-tab.active {
+  color: var(--color-primary);
+  background-color: var(--color-background-alt);
+}
+
+.search-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--color-primary);
+}
+
+.search-fields {
+  padding: var(--spacing-lg);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--spacing-md);
+  align-items: end;
+}
+
+.search-field {
+  position: relative;
+}
+
+.field-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+}
+
+.search-select,
+.search-input {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  padding-left: 40px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  transition: border-color var(--transition-fast);
+}
+
+.search-select:focus,
+.search-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.search-select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.search-field:not(:first-child) .search-select,
+.search-input {
+  padding-left: var(--spacing-md);
+}
+
+.price-field {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.price-separator {
+  color: var(--color-text-muted);
+}
+
+.bedroom-options {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.bedroom-btn {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.bedroom-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.bedroom-btn.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+.search-btn {
+  min-width: 120px;
+}
+
+@media (max-width: 768px) {
+  .search-fields {
+    grid-template-columns: 1fr;
+  }
+  
+  .bedroom-options {
+    justify-content: center;
+  }
+}
