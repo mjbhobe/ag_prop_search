@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { FiFilter, FiX } from 'react-icons/fi';
+import { FiFilter, FiX, FiSearch } from 'react-icons/fi';
 import { getCities, getLocalitiesByCity } from '../services/api';
 import './FilterPanel.css';
 
@@ -60,7 +60,7 @@ function FilterPanel({ filters, onFilterChange }) {
   };
 
   return (
-    <>
+    <div className="filter-wrapper">
       <button 
         className="filter-toggle-mobile btn btn-secondary"
         onClick={() => setIsOpen(!isOpen)}
@@ -74,6 +74,16 @@ function FilterPanel({ filters, onFilterChange }) {
           <h3>Filters</h3>
           <button className="filter-close" onClick={() => setIsOpen(false)}>
             <FiX size={20} />
+          </button>
+        </div>
+
+        <div className="filter-search-action">
+          <button 
+            className="btn btn-primary search-action-btn"
+            onClick={() => onFilterChange(filters)}
+          >
+            <FiSearch size={18} />
+            Search
           </button>
         </div>
 
@@ -179,7 +189,7 @@ function FilterPanel({ filters, onFilterChange }) {
       </aside>
       
       {isOpen && <div className="filter-overlay" onClick={() => setIsOpen(false)} />}
-    </>
+    </div>
   );
 }
 
