@@ -2,6 +2,8 @@
 
 A MagicBricks-style property search website for Indian properties (Mumbai & Bangalore).
 
+**NOTE:** This full-stack application was built _completely_ using Antigravity AI and vibe coding techniques over a span of 6 hours. I am not a full-stack developer and have no experience developing websites using React/Vite. All the code was managed simplay by prompting & guiding Gemini 3 Pro LLM inside of Antigravity IDE.
+
 ## Features
 
 - 🏠 Property search by city, locality, listing type, budget, bedrooms
